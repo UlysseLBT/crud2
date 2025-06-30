@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('cp_ville', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('code_postal', 10);
-            $table->string('ville', 100);
+        Schema::create('articles', function (Blueprint $table) {
+            $table->id();
+            $table->string('nom', 100);
+            $table->text('description');
+            $table->decimal('prix', 8, 2);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->onUpdateCurrent();
         });
@@ -18,6 +19,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('cp_ville');
+        Schema::dropIfExists('articles');
     }
 };
