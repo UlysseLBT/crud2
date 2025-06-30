@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->text('description');
             $table->decimal('prix', 8, 2);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->onUpdateCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

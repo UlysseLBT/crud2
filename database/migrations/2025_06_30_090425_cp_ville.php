@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('code_postal', 10);
             $table->string('ville', 100);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->onUpdateCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
